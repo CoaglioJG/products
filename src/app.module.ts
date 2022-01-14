@@ -6,7 +6,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseModule } from './infra/database/database.module';
 import { DomainModule } from './domain/domain.module';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -27,7 +26,6 @@ import { DomainModule } from './domain/domain.module';
     }),
     DatabaseModule,
     DomainModule,
-  
   ],
   controllers: [AppController],
   providers: [AppService],
