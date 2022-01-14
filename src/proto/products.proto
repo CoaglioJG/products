@@ -32,6 +32,10 @@ message ProductsResponse{
     Product product = 1;
 }
 
+message Empty{
+
+}
+
 message DoneResponse{
     bool done = 1;
 }
@@ -41,8 +45,9 @@ message Clone{
 
 service ProductService{
     rpc create(RegisterProducts) returns (ProductsResponse);
-    rpc read(GetProducts) returns (ProductsResponse);
+    rpc get(GetProducts) returns (ProductsResponse);
     rpc update(UpdateProducts) returns (DoneResponse);
     rpc del(DeleteProducts) returns (DoneResponse);
     rpc clone(Clone) returns (ProductsResponse);
+    rpc find(Empty) returns (ProductsResponse[])
 }
