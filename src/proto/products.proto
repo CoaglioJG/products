@@ -43,11 +43,15 @@ message Clone{
     int32 id = 1;
 }
 
+message FindResponse{
+    repeated pharmacy = 1;
+}
+
 service ProductService{
     rpc create(RegisterProducts) returns (ProductsResponse);
     rpc get(GetProducts) returns (ProductsResponse);
     rpc update(UpdateProducts) returns (DoneResponse);
     rpc del(DeleteProducts) returns (DoneResponse);
     rpc clone(Clone) returns (ProductsResponse);
-    rpc find(Empty) returns (ProductsResponse[])
+    rpc find(Empty) returns (FindResponse)
 }
